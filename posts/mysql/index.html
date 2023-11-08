@@ -1,0 +1,133 @@
+<!doctype html><html lang=en>
+<head>
+<title>
+MySQL ::
+Time Flies
+</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="mysql命令 #  连接至数据库
+mysql -h &amp;lt;ip&amp;gt; -u &amp;lt;username&amp;gt; -p 数据库操作 #  显示所有数据库
+show databases; 切换数据库
+use &amp;lt;dbname&amp;gt;; 创建数据库
+create database &amp;lt;dbname&amp;gt;; 删除数据库
+drop database &amp;lt;dbname&amp;gt;; 表操作 #  用一个表更新另一个表的若干列
+update &amp;lt;table1&amp;gt; i, &amp;lt;table2&amp;gt; j set i.&amp;lt;column1&amp;gt;=j.&amp;lt;column1&amp;gt;, i.&amp;lt;column2&amp;gt;=j.&amp;lt;column2&amp;gt; where i.&amp;lt;id&amp;gt;=j.&amp;lt;id&amp;gt;; ">
+<meta name=keywords content>
+<meta name=robots content="noodp">
+<link rel=canonical href=https://blog.kinton.cloud/posts/mysql/>
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=https://blog.kinton.cloud/style.css>
+<link rel=apple-touch-icon-precomposed sizes=144x144 href=https://blog.kinton.cloud/img/apple-touch-icon-144-precomposed.png>
+<link rel="shortcut icon" href=https://blog.kinton.cloud/img/favicon.png>
+<link href=/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<link href=/fonts/LXGWNeoZhiSongCHS.woff2 rel=preload type=font/woff2 as=font crossorigin>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="MySQL">
+<meta name=twitter:description content="MySQL">
+<meta property="og:title" content="MySQL">
+<meta property="og:description" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://blog.kinton.cloud/posts/mysql/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2023-11-06T15:10:02+08:00">
+<meta property="article:modified_time" content="2023-11-06T15:10:02+08:00">
+<link rel=stylesheet href=https://cdn.plyr.io/3.7.8/plyr.css>
+</head>
+<body>
+<div class=container>
+<header class=header>
+<span class=header__inner>
+<a href=https://blog.kinton.cloud class=logo style=text-decoration:none>
+<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+<span class=logo__text>hello friend</span>
+<span class=logo__cursor></span>
+</a>
+<span class=header__right>
+<nav class=menu>
+<ul class="menu__inner menu__inner--desktop">
+<li><a href=/about/>About</a></li>
+</ul>
+<ul class="menu__inner menu__inner--mobile">
+<li><a href=/about/>About</a></li>
+</ul>
+</nav>
+<span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+</span>
+<span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg>
+</span>
+</span>
+</span>
+</header>
+<div class=content>
+<article class=post>
+<h1 class=post-title>MySQL</h1>
+<div class=post-meta>
+<time class=post-date>
+2023-11-06
+</time>
+</div>
+<div class=post-content>
+<h2>Table of Contents</h2>
+<aside class=table-of-contents><nav id=TableOfContents>
+<ul>
+<li><a href=#mysql命令>mysql命令</a></li>
+<li><a href=#数据库操作>数据库操作</a></li>
+<li><a href=#表操作>表操作</a></li>
+</ul>
+</nav></aside>
+<h2 id=mysql命令>
+mysql命令
+<a href=#mysql%e5%91%bd%e4%bb%a4 class=h-anchor aria-hidden=true>#</a>
+</h2>
+<p>连接至数据库</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mysql -h &lt;ip&gt; -u &lt;username&gt; -p
+</code></pre></div><h2 id=数据库操作>
+数据库操作
+<a href=#%e6%95%b0%e6%8d%ae%e5%ba%93%e6%93%8d%e4%bd%9c class=h-anchor aria-hidden=true>#</a>
+</h2>
+<p>显示所有数据库</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>show</span> databases;
+</code></pre></div><p>切换数据库</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql>use <span style=color:#f92672>&lt;</span>dbname<span style=color:#f92672>&gt;</span>;
+</code></pre></div><p>创建数据库</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>create</span> <span style=color:#66d9ef>database</span> <span style=color:#f92672>&lt;</span>dbname<span style=color:#f92672>&gt;</span>;
+</code></pre></div><p>删除数据库</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>drop</span> <span style=color:#66d9ef>database</span> <span style=color:#f92672>&lt;</span>dbname<span style=color:#f92672>&gt;</span>;
+</code></pre></div><h2 id=表操作>
+表操作
+<a href=#%e8%a1%a8%e6%93%8d%e4%bd%9c class=h-anchor aria-hidden=true>#</a>
+</h2>
+<p>用一个表更新另一个表的若干列</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>update</span> <span style=color:#f92672>&lt;</span>table1<span style=color:#f92672>&gt;</span> i, <span style=color:#f92672>&lt;</span>table2<span style=color:#f92672>&gt;</span> j
+<span style=color:#66d9ef>set</span> i.<span style=color:#f92672>&lt;</span>column1<span style=color:#f92672>&gt;=</span>j.<span style=color:#f92672>&lt;</span>column1<span style=color:#f92672>&gt;</span>, i.<span style=color:#f92672>&lt;</span>column2<span style=color:#f92672>&gt;=</span>j.<span style=color:#f92672>&lt;</span>column2<span style=color:#f92672>&gt;</span>
+<span style=color:#66d9ef>where</span> i.<span style=color:#f92672>&lt;</span>id<span style=color:#f92672>&gt;=</span>j.<span style=color:#f92672>&lt;</span>id<span style=color:#f92672>&gt;</span>;
+</code></pre></div>
+</div>
+</article>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<a href=https://blog.kinton.cloud class=logo style=text-decoration:none>
+<span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg>
+</span>
+<span class=logo__text>hello friend</span>
+<span class=logo__cursor></span>
+</a>
+<div class=copyright>
+<span>© 2023 Powered by <a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span>
+<span><a href=https://github.com/panr/hugo-theme-hello-friend target=_blank>Theme</a> made by <a href=https://github.com/panr target=_blank>panr</a></span>
+</div>
+</div>
+</footer>
+<script type=text/javascript src=/bundle.min.js></script>
+<script src=https://cdn.plyr.io/3.7.8/plyr.js></script>
+<script>const player=Plyr.setup('.js-player')</script>
+</div>
+</body>
+</html>
